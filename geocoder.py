@@ -5,7 +5,7 @@ def callBaiduGeocoderAPI(address):
 		'city':'上海市',
 		'address':address,
 		'output':'json',
-		'ret_coordtype':'gcj02ll',
+		'ret_coordtype':'wgs84',
 		#'ak':'gBoRjgnsDen72Gmj9l2SkXUwVyOu1AFQ'
 		'ak':'TgzQWTwQh3FLuOYXOHr1l1qQ9jvM2Pq7'
 	}
@@ -36,5 +36,4 @@ def callBaiduGeocoderAPI(address):
 	 		print 'reached api limit', resultJson['message'].encode('utf-8')
 	 		exit()
 		return None, None
-	latitude, longitude = gcj02_decrypt(lat, lon)
-	return latitude, longitude
+	return lat, lon
